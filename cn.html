@@ -1,48 +1,17 @@
 <!DOCTYPE html>
-<html lang="cn">
+<html>
 <head>
 	<meta charset="utf-8">
 	<title>柴天翼（Jared）| 个人网页</title>
-	<link rel="icon" type="image/x-icon" href="https://jaredchai.github.io/assets/images/cat.ico">
+	<link rel="icon" type="image/x-icon" href="assets/images/cat.ico">
 	<link rel="canonical" href="https://jaredchai.com/">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="https://jaredchai.github.io/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@200..900&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style_cn.css">
 </head>
-
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-  document.querySelectorAll('a[href]').forEach(a => {
-    if (!a.target) {                       // leave existing targets alone
-      a.target = '_blank';
-      a.rel = 'noopener noreferrer';
-    }
-  });
-});
-</script>
-
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-  const VISITED_KEY = 'clickedLinks';
-
-  // --- 1) load previously-clicked URLs from localStorage --------------
-  const saved = JSON.parse(localStorage.getItem(VISITED_KEY) || '[]');
-  saved.forEach(href => {
-    const a = document.querySelector(`a[href='${href}']`);
-    if (a) a.classList.add('clicked');
-  });
-
-  // --- 2) mark new clicks & persist them ------------------------------
-  document.body.addEventListener('click', e => {
-    const a = e.target.closest('a[href]');
-    if (!a) return;                       // not a link
-    a.classList.add('clicked');           // visual cue now
-    if (!saved.includes(a.href)) {        // store for next visit
-      saved.push(a.href);
-      localStorage.setItem(VISITED_KEY, JSON.stringify(saved));
-    }
-  });
-});
-</script>
 
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-S4Q4C5BZ6D"></script>
@@ -55,132 +24,340 @@ document.addEventListener('DOMContentLoaded', () => {
 </script>
 
 <body>
-<body style="background-color:#F8F8FF;">
-<header class="profile-header">
-    <img class="profile" src="https://jaredchai.github.io/assets/images/profile.JPG" alt="Portrait of Jared Chai, business suit and glasses">
-    <div class="bio">
-	    <h1>柴天翼 （Jared）</h1>
-	    <h4>安永 – 博智隆（EYP）<br>
-	    量化金融与经济组</h4>
-	    <address>
-	        One Manhattan West,<br>
-            395 9th Ave,<br>
-	        New York, NY 10001<br>
-	        邮箱: chtianyi&nbsp;at&nbsp;umich&nbsp;dot&nbsp;edu
-	    </address>
-	    <links> <br><a href="https://www.linkedin.com/in/tianyi-jared-chai/">领英</a>  
-	    	&middot <a href="https://github.com/jaredchai">GitHub</a>  
-	        &middot <a href="https://scholar.google.com/citations?user=Mg5M5jEAAAAJ&hl=en&oi=ao">谷歌学术</a>
-	        &middot <a href="https://orcid.org/0000-0002-7806-0594">ORCID</a>  
-	        &middot <a href="https://www.researchgate.net/profile/Jared-Chai-2">ResearchGate</a>
-            &middot <a href="index.html">English Homepage</a>
-	    </links>
+<!-- NAVBAR-->
+<nav>
+    <div class="left">
+        <a href="#main">柴天翼（Jared）</a>
     </div>
-</header>
+    <div class="right">
+        <a href="https://github.com/jaredchai" target="_blank" rel="noopener
+        noreferrer">
+            <i class="fa-brands fa-github"></i>
+            <span>GitHub</span>
+        </a>
 
-<hr>
+        <a href="https://www.linkedin.com/in/tianyi-jared-chai/" target="_blank" rel="noopener
+        noreferrer">
+            <i class="fa-brands fa-linkedin"></i>
+            <span>领英</span>
+        </a>
+
+        <a href="https://scholar.google.com/citations?user=Mg5M5jEAAAAJ&hl=en&oi=ao" target="_blank" rel="noopener
+        noreferrer">
+            <i class="fa-brands fa-google-scholar"></i>
+            <span>谷歌学术</span>
+        </a>
+
+        <a href="https://orcid.org/0000-0002-7806-0594" target="_blank" rel="noopener
+        noreferrer">
+            <i class="fa-brands fa-orcid"></i>
+            <span>ORCID</span>
+        </a>
+
+        <a href="https://www.researchgate.net/profile/Jared-Chai-2" target="_blank" rel="noopener
+        noreferrer">
+            <i class="fa-brands fa-researchgate"></i>
+            <span>ResearchGate</span>
+        </a>
+
+        <a class="englishlink" href="index.html">
+            <i class="fa-solid fa-font"></i>
+            <span>English</span>
+        </a>
+    </div>
+</nav>
 
 <main>
+    <!-- SECTION 1: main -->
+    <section class="main-section" id="main">
+        <div class = "headshot">
+            <img src="assets/images/profile.webp" alt="Jared Chai headshot">
+        </div>
 
-<section id="about">
-    <h2>简介</h2>
-	<p>我目前在纽约 <a href="https://www.ey.com/en_us/services/strategy/parthenon">安永-博智隆（EYP）</a> 量化金融与经济组（简称QFE，又名“复杂产品”组）担任量化分析师。
-	<p>我2021年毕业于 <a href="https://umich.edu">密西根大学（安娜堡）</a> 并获得<b>双学士学位</b>，后在2023年毕业于 <a href="https://gatech.edu">佐治亚理工学院</a> 并获得<b>双硕士</b>学位。</p>
-	<p>我2016年毕业于加拿大 <a href="https://www.sac.on.ca/">圣安德鲁学院</a> 男子高中。 ––– <i>Dileas gu brath / faithful forever</i></p>
-</section>
+        <div class = "text">
+            <h2>你好，欢迎来到我的主页。</h2>
+            <p>我目前在纽约<a href="https://www.ey.com/en_us/services/strategy/parthenon" target="_blank" rel="noopener
+        noreferrer">安永-博智隆（EYP）</a>量化金融与经济组（简称QFE，又名“复杂产品”组）担任分析师。
+            <p>2023年毕业于 <a href="https://gatech.edu" target="_blank" rel="noopener
+        noreferrer">佐治亚理工学院</a> 并获得<b>双硕士学位</b>。</p>
+            <p>2021年毕业于 <a href="https://umich.edu"target="_blank" rel="noopener
+        noreferrer">密西根大学（安娜堡）</a> 并获得<b>双学士学位。</b></p>
+            <p>2016年毕业于加拿大 <a href="https://www.sac.on.ca/" target="_blank" rel="noopener
+        noreferrer">圣安德鲁学院</a> 男子高中。</p>
+            </p>––– <i>Dileas gu brath / faithful forever</i></p>
+            <div class="email"><p><b>邮箱：</b> chtianyi at umich dot edu</p></div>
+            <div class="links">
+                <a href="#education">
+                    <i class="fa-solid fa-user-graduate"></i>
+                    <span> 教育背景 </span>
+                </a>
 
-<section id="Education">
-    <h2>教育经历</h2>
-    <h4><u>佐治亚理工学院</u></h4>
-    <p><i>2021年9月 至 2023年5月 – 亚特兰大，佐治亚州 – GPA: 4.0</i></p>
-    <ul class="fancy">
-        <li>理科硕士（M.S.），<a href="https://qcf.gatech.edu/">量化金融</a></li>
-        <li>理科硕士（M.S.），<a href="https://cse.gatech.edu/ms-computational-science-and-engineering">计算科学</a></li>
-    </ul>
-    <h4><u>密西根大学 </u></h4>
-    <p><i>2016年9月 至 2021年5月 – 安娜堡，密西根州 – GPA: 3.93</i></p>
-    <ul class="fancy">
-        <li>工程科学学士（B.S.E.，<b>最高荣誉 / <i>Summa Cum Laude</b></i>），<a href="https://ioe.engin.umich.edu/">工业运筹工程</a>（运筹方向），工程学院</li>
-        <li>工商管理学士（B.B.A.，<b>最高荣誉 / <i>High Distinction</b></i>），工商管理（金融方向），<a href="https://michiganross.umich.edu/undergraduate/bba">罗斯商学院</a></li>
-        <li>辅修：<a href="https://cse.engin.umich.edu/">计算机科学</a></li>
-    </ul>
-</section>
+                <a href="#publication">
+                    <i class="fa-solid fa-newspaper"></i>
+                    <span> 发表内容 </span>
+                </a>
 
-<section id="publications">
-    <h2>发表论文及部分公开项目</h2>
-    <ul class="fancy">
-        <li><b>Chai JT</b>, Bobrovnikov M, Dinov ID (2022). <i><a href="https://iase-web.org/documents/papers/sat2021/IASE2021%20Satellite%20132_DINOV.pdf">Probability Distributome – Computing, Visualization, and Instruction</a></i>. Proceedings, IASE 2021 <i><a href="https://iase-web.org/Conference_Proceedings.php?p=2021_Statistics_Education_in_the_Era_of_Data_Science">Statistics Education in the Era of Data Science</a></i>. <i><a href="https://iase-web.org/Conference_Proceedings.php?p=2021_Statistics_Education_in_the_Era_of_Data_Science">DOI: 10.52041/iase.pdsxt</a></i>.</li>
-        <li>Bobrovnikov M, <b>Chai JT</b>, Dinov ID (2022). <i><a href="https://link.springer.com/article/10.1007/s42979-022-01206-w"> Interactive Visualization and Computation of 2D and 3D Probability Distributions</a></i>. <i><a href="https://link.springer.com/journal/42979">SN Computer Science</a></i> 3: 327. <i><a href="https://link.springer.com/article/10.1007/s42979-022-01206-w">DOI: 10.1007/s42979-022-01206-w</a></i>.</li>
-        <li><a href="https://rcompute.nursing.umich.edu/SOCR_Probability_Distribution_Calculator_and_Modeler/">SOCR Probability Distribution Calculator/Modeler</a> [<a href="https://github.com/SOCR/ProbDistCalc_RShiny">GitHub</a>]</li>
-        <li><a href="https://socr.umich.edu/DSPA2/DSPA2_notes/DSPA_Appendix_5_SQL_DB_Queries.html">DSPA2 Appendix 5: Database SQL Queries</a></li>
-    </ul>
-</section>
+                <a href="#research">
+                    <i class="fa-solid fa-calculator"></i>
+                    <span> 科研经历 </span>
+                </a>
 
-<section id="research">
-    <h2>科研经历</h2>
-    <ul class="fancy">
-        <li><strong>研究课题组长</strong>，<a href="https://www.socr.umich.edu/index.html">Statistics Online Computational Resource (SOCR)</a>，密西根大学 — 2019年9月 至 2021年8月 (指导老师: <a href="https://scholar.google.com/citations?user=DYIQNOcAAAAJ&hl=en">Dr. Ivo D. Dinov</a>)</li>
-        <li><strong>研究助理</strong>，<a href="https://mdp.engin.umich.edu/">Multidisciplinary Design Program</a>，密西根大学 — 2019年9月 至 2021年8月 </li>
-        <ul class="fancy">
-        	<li><a href="https://mdp.engin.umich.edu/meet_mdp_students/jared-chai/">学生专访：Jared Chai</a></li>
-        </ul>
-        <li><strong>暑期研究员</strong>，<a href="https://michr.umich.edu/">Michigan Institute for Clinical &amp; Health Research</a>，密西根大学  – 2020年6月 至 2020年8月</li>
-        <li><strong>研究助理</strong>，密西根大学罗斯商学院金融系 – 2020年2月 至 2020年6月</li>
-    </ul>
-</section>
+                <a href="#teaching">
+                    <i class="fa-solid fa-person-chalkboard"></i>
+                    <span> 教学经历 </span>
+                </a>
 
-<section id="teaching">
-    <h2>教学经历</h2>
+                <a href="#awards">
+                    <i class="fa-solid fa-award"></i>
+                    <span> 获奖及成就 </span>
+                </a>
 
-    <h4><u>佐治亚理工学院</u></h4>
-    <ul class="fancy">
-        <li>MATH 6635 – 金融数值法（研究生助教）– 2023年春</li>
-    </ul>
-    <h4><u>密西根大学</u></h4>
-    <ul class="fancy">
-        <li>FIN 615 – 估值（助教）– 2020年秋</li>
-        <li>FIN 415 – 企业投资（助教）– 2020年秋</li>
-        <li>FIN 409 – 固定收益（助教） – 2021年冬</li>
-        <li>FIN 480 – 金融衍生品（助教）– 2021年冬</li>
-        <li>FIN 300 – 金融管理（助教） – 2020年冬</li>
-        <li>FIN 302 – 金融决策（助教） – 2019年秋，2020年冬，2020年秋，2021年冬</li>
-    </ul>
-</section>
+                <a href="#industry">
+                    <i class="fa-solid fa-briefcase"></i>
+                    <span> 行业经历 </span>
+                </a>
 
-<section id="awards">
-    <h2>获奖及成就</h2>
-    <ul class="fancy">
-        <li>James B. Angell Scholar奖, 密西根大学（2018年，2021年）</li>
-        <li>H.R. &amp; D.I. Rasch Scholarship奖学金, 密西根大学 工业运筹工程系（2018）</li>
-        <li>校级荣誉表彰, 密西根大学就读期间全部学期</li>
-        <li>工程学院院长荣誉榜, 密西根大学就读期间全部学期</li>
-        <li>特许金融分析师（CFA）一级考试通过（2024年5月，成绩前10%，通过率46%）</li>
-        <li>特许金融分析师（CFA）二级考试通过（2024年11月，成绩前10%，通过率39%）</li>
-    </ul>
-</section>
+                <a href="#personal">
+                    <i class="fa-solid fa-cat"></i>
+                    <span> 猫 </span>
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- SECTION 2: education -->
+    <section id="education" class="education-section">
+        <div class="text">
+            <h2>教育背景</h2>
+            <div class="GaTech">
+                <h3>佐治亚理工学院</h3>
+                <p>2021年9月 至 2023年5月</p>
+                <p><i>亚特兰大，佐治亚州</i></p>
+                <p><b>GPA</b>: 4.0/4 </p>
+                <ul>
+                    <li><p>理科硕士（M.S.）</p></li>
+                    <ul>
+                        <li><p><a href="https://qcf.gatech.edu/" target="_blank" rel="noopener
+        noreferrer">量化金融</a></p></li>
+                    </ul>
+                    <li><p>理科硕士（M.S.）</p></li>
+                    <ul>
+                        <li><p><a href="https://cse.gatech.edu/ms-computational-science-and-engineering" target="_blank" rel="noopener
+        noreferrer">计算科学</a></p></li>
+                    </ul>
+                </ul>
+            </div>
+            <div class="Michigan">
+                <h3>密西根大学</h3>
+                <p>2016年9月 至 2021年5月</p>
+                <p><i>安娜堡，密西根州</i></p>
+                <p><b>GPA</b>: 3.93/4 </p>
+                <ul>
+                    <li><p>工程科学学士（B.S.E.），<b>最高荣誉<i>（Summa Cum Laude）</b></i></p></li>
+                    <ul>
+                        <li><p>工程学院，<a href="https://ioe.engin.umich.edu/" target="_blank" rel="noopener
+        noreferrer">工业运筹工程</a>（运筹学方向）</p></li>
+                    </ul>
+                    <li><p>工商管理学士（B.B.A.），<b>最高荣誉<i>（High Distinction）</b></i></p></li>
+                    <ul>
+                        <li><p>罗斯商学院，<a href="https://michiganross.umich.edu/undergraduate/bba" target="_blank" rel="noopener
+        noreferrer">工商管理</a>（金融方向）</p></li>
+                    </ul>
+                    <li><p>辅修，<a href="https://cse.engin.umich.edu/" target="_blank" rel="noopener
+        noreferrer">计算机科学</a></p></li>
+                </ul>
+            </div>
+        </div>
+    </section>
 
-<section id="industry">
-    <h2>行业经历</h2>
-    <ul class="fancy">
-        <li><strong>分析师</strong>，安永-博智隆（EYP）/ <i>量化金融及经济</i> — 2023年9月至今 – 纽约市，纽约州</li>
-        <li><strong>暑期分析师</strong>，MayTech Global Investments — 2023年7月 至 2023年9月 – 纽约市，纽约州</li>
-        <li><strong>暑期分析师</strong>，Dimensional Fund Advisors / <i>投资方案部 / 思想领导力小组</i> — 2022年6月 至 2022年8月 – 奥斯丁，德克萨斯州</li>
-        <li><strong>暑期分析师</strong>，安永 / <i>金融服务部 / 科技咨询组</i> — 2019年6月 至 2019年8月 – 纽约市，纽约州</li>
-        <li><strong>项目管理实习生</strong>，康明斯集团 / <i>国际物流优化小组（GLIG）</i> — 2018年5月至2018年8月 – 孟菲斯，田纳西州</li>
-    </ul>
-</section>
+    <!-- SECTION 3: publication -->
+     <section id="publication" class="publication-section">
+        <div class="text">
+            <h2>发表论文 及 部分公开项目</h2>
+            <ul class = "pubs">
+                <li><p><b>Chai JT</b>, Bobrovnikov M, Dinov ID (2022). <i><a href="https://iase-web.org/documents/papers/sat2021/IASE2021%20Satellite%20132_DINOV.pdf" target="_blank" rel="noopener
+        noreferrer">Probability Distributome – Computing, Visualization, and Instruction</a></i>. Proceedings, IASE 2021 <i><a href="https://iase-web.org/Conference_Proceedings.php?p=2021_Statistics_Education_in_the_Era_of_Data_Science" target="_blank" rel="noopener
+        noreferrer">Statistics Education in the Era of Data Science</a></i>. <i><a href="https://iase-web.org/Conference_Proceedings.php?p=2021_Statistics_Education_in_the_Era_of_Data_Science" target="_blank" rel="noopener
+        noreferrer">DOI: 10.52041/iase.pdsxt</a></i>.</p></li>
+                <li><p>Bobrovnikov M, <b>Chai JT</b>, Dinov ID (2022). <i><a href="https://link.springer.com/article/10.1007/s42979-022-01206-w" target="_blank" rel="noopener
+        noreferrer"> Interactive Visualization and Computation of 2D and 3D Probability Distributions</a></i>. <i><a href="https://link.springer.com/journal/42979" target="_blank" rel="noopener
+        noreferrer">SN Computer Science</a></i> 3: 327. <i><a href="https://link.springer.com/article/10.1007/s42979-022-01206-w" target="_blank" rel="noopener
+        noreferrer">DOI: 10.1007/s42979-022-01206-w</a></i>.</p></li>
+                <li><p><a href="https://rcompute.nursing.umich.edu/SOCR_Probability_Distribution_Calculator_and_Modeler/" target="_blank" rel="noopener
+        noreferrer">SOCR Probability Distribution Calculator/Modeler</a></p></li>
+                    <ul>
+                        <li><p>GitHub Repository: <a href="https://github.com/SOCR/ProbDistCalc_RShiny" target="_blank" rel="noopener
+        noreferrer">here</a></p></li>
+                    </ul>
+                <li><p><a href="https://socr.umich.edu/DSPA2/DSPA2_notes/DSPA_Appendix_5_SQL_DB_Queries.html" target="_blank" rel="noopener
+        noreferrer">DSPA2 Appendix 5: Database SQL Queries</a></p></li>
+            </ul>
+        </div>
+    </section>
 
-<section id="misc">
-    <h2>猫</h2>
-    <p>感谢来访 — 请你看我的猫（Sydney）：</p>
-    <img class="cat" src="https://jaredchai.github.io/assets/images/cat.JPG" alt="Jared’s cat sitting regally.">
-</section>
+    <!-- SECTION 4: research -->
+     <section id="research" class="research-section">
+        <div class="text">
+            <h2>科研经历</h2>
+            <ul class = "researches">
+                <li><p><b>研究课题组长</b>，<a href="https://www.socr.umich.edu/index.html" target="_blank" rel="noopener
+        noreferrer">Statistics Online Computational Resource (SOCR)</a>，密西根大学</p></li>
+                <ul>
+                    <li><p>2019年9月 至 2021年8月</p></li>
+                    <li><p>指导老师： <a href="https://scholar.google.com/citations?user=DYIQNOcAAAAJ&hl=en" target="_blank" rel="noopener
+        noreferrer">Dr. Ivo D. Dinov</a></p></li>
+                </ul>
+                <li><p><b>研究助理</b>，<a href="https://mdp.engin.umich.edu/" target="_blank" rel="noopener
+        noreferrer">Multidisciplinary Design Program</a>，密西根大学</p></li>
+                <ul>
+                    <li><p>2019年9月 至 2021年8月</p></li>
+                    <li><p>学生专访：<a href="https://mdp.engin.umich.edu/meet_mdp_students/jared-chai/" target="_blank" rel="noopener
+        noreferrer"> Jared Chai</a></p></li>
+                </ul>
+                <li><p><b>暑期研究员</b>，<a href="https://michr.umich.edu/" target="_blank" rel="noopener
+        noreferrer">Michigan Institute for Clinical &amp; Health Research</a>，密西根大学</p></li>
+                <ul>
+                    <li><p>2020年6月 至 2020年8月</p></li>
+                </ul>
+                <li><p><b>研究助理</b>，密西根大学 罗斯商学院 金融系</p></li>
+                <ul>
+                    <li><p>2020年2月 至 2020年6月</p></li>
+                </ul>
+            </ul>
+        </div>
+    </section>
+
+    <!-- SECTION 5: teaching -->
+     <section id="teaching" class="teaching-section">
+        <div class="text">
+            <h2>教学经历</h2>
+            <div class="GaTech">
+                <h3>佐治亚理工学院</h3>
+                <ul>
+                    <li><p>MATH 6635 – 金融数值法（研究生助教）</p></li>
+                    <ul>
+                        <li><p>2023年春</p></li>
+                    </ul>
+                </ul>
+            </div>
+            <div class="Michigan">
+                <h3>密西根大学</h3>
+                <ul>
+                    <li><p>FIN 409 – 固定收益（助教）</p></li>
+                    <ul>
+                        <li><p>2021年冬</p></li>
+                    </ul>
+                    <li><p>FIN 480 – 金融衍生品（助教）</p></li>
+                    <ul>
+                        <li><p>2021年冬</p></li>
+                    </ul>
+                    <li><p>FIN 615 – 估值（助教）</p></li>
+                    <ul>
+                        <li><p>2020年秋</p></li>
+                    </ul>
+                    <li><p>FIN 415 – 企业投资（助教）</p></li>
+                    <ul>
+                        <li><p>2020年秋</p></li>
+                    </ul>
+                    <li><p>FIN 300 – 金融管理（助教）</p></li>
+                    <ul>
+                        <li><p>2020年冬</p></li>
+                    </ul>
+                    <li><p>FIN 302 – 金融决策（助教）</p></li>
+                    <ul>
+                        <li><p>2019年秋，2020年冬，2020年秋，2021年冬</p></li>
+                    </ul>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 6: awards -->
+     <section id="awards" class="awards-section">
+        <div class="text">
+            <h2>获奖 及 成就</h2>
+            <ul class = "awards">
+                <li><p><b>James B. Angell Scholar 学者奖</b> (2018, 2021)</p></li>
+                <ul>
+                    <li>
+                        <p>密西根大学</p>
+                    </li>
+                </ul>
+                <li><p><b>H.R. &amp; D.I. Rasch Scholarship 奖学金</b> (2018)</p></li>
+                <ul>
+                    <li>
+                        <p>密西根大学 工业运筹工程系</p>
+                    </li>
+                </ul>
+                <li><p><b>校级荣誉表彰</b>（就读期间全部学期）</p></li>
+                <ul>
+                    <li>
+                        <p>密西根大学</p>
+                    </li>
+                </ul>
+                <li><p><b>院长荣誉榜</b>（就读期间全部学期）</p></li>
+                <ul>
+                    <li>
+                        <p>密西根大学 工程学院</p>
+                    </li>
+                </ul>
+                <li><p><b>特许金融分析师（CFA）一级</b>考试通过</p></li>
+                <ul>
+                    <li>
+                        <p>2024年5月，成绩前10%，通过率46%</p></li>
+                    </li>
+                </ul> 
+                <li><p><b>特许金融分析师（CFA）二级</b>考试通过</p></li>
+                <ul>
+                    <li>
+                        <p>2024年11月，成绩前10%，通过率39%</p></li>
+                    </li>
+                </ul> 
+            </ul>
+        </div>
+    </section>
+
+    <!-- SECTION 7: industry -->
+     <section id="industry" class="industry-section">
+        <div class="text">
+            <h2>行业经历</h2>
+            <ul class = "companies">
+                <li><p><b>分析师</b>, 安永-博智隆（EYP）, <i>量化金融及经济</i></p></li>
+                <ul>
+                    <li><p>2023年9月至今 – 纽约市，纽约州</p></li>
+                </ul>
+                <li><p><b>暑期分析师</b>, <a href="http://www.maytechglobal.com/" target="_blank" rel="noopener noreferrer">MayTech Global Investments</a></p></li>
+                <ul>
+                    <li><p>2023年7月 至 2023年9月 – 纽约市，纽约州</p></li>
+                </ul>
+                <li><p><b>暑期分析师</b>, <a href="https://www.dimensional.com/" target="_blank" rel="noopener noreferrer">Dimensional Fund Advisors</a>, <i>投资方案部，思想领导力小组</i></a></p></li>
+                <ul>
+                    <li><p>2022年6月 至 2022年8月 – 奥斯丁，德克萨斯州</p></li>
+                </ul>
+                <li><p><b>暑期分析师</b>, 安永, <i>金融服务部，科技咨询组</i></a></p></li>
+                <ul>
+                    <li><p>2019年6月 至 2019年8月 – 纽约市，纽约州</p></li>
+                </ul>
+                <li><p><b>项目管理实习生</b>, <a href="https://www.cummins.com/" target="_blank" rel="noopener noreferrer">康明斯集团</a>, <i>国际物流优化小组 (GLIG)</i></p></li>
+                <ul>
+                    <li><p>2018年5月至2018年8月 – 孟菲斯，田纳西州</p></li>
+                </ul>
+            </ul>
+        </div>
+    </section>
+
+    <!-- SECTION 8: personal -->
+     <section id="personal" class="personal-section">
+        <div class="text">
+            <div class="cat">
+                <p>感谢来访 — 请你吸我的猫（Sydney）：</p>
+                <img class="cat" src="assets/images/cat.JPG" alt="Jared's cat Sydney.">
+            </div>
+        </div>
+    </section>
 
 </main>
-
-<footer class="text-center muted">
-    &copy; 2025 柴天翼（Jared)。最近更新 2025年6月7日。
-</footer>
+    <footer class="footer">
+        <p>&copy; 2025 柴天翼（Jared）。最近更新 2025年6月7日。</p>
+    </footer>
 </body>
-
 </html>

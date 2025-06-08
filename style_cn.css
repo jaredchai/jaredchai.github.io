@@ -117,8 +117,8 @@ nav .right a{
 }
 
 .main-section .text .email p{
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
 
 .main-section .text .links{
@@ -306,11 +306,6 @@ nav .right a{
 
     nav .right a span{
         display: none;
-    }
-
-    nav .right .chineselink .ChineseIcon{
-        width: 20px;
-        height: 20px;
     }
     
     /* Section 1: main */

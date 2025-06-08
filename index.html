@@ -1,48 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 	<meta charset="utf-8">
 	<title>Jared Chai | Personal Website</title>
-	<link rel="icon" type="image/x-icon" href="https://jaredchai.github.io/assets/images/cat.ico">
+	<link rel="icon" type="image/x-icon" href="assets/images/cat.ico">
 	<link rel="canonical" href="https://jaredchai.com/">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="https://jaredchai.github.io/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="styles.css">
 </head>
-
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-  document.querySelectorAll('a[href]').forEach(a => {
-    if (!a.target) {                       // leave existing targets alone
-      a.target = '_blank';
-      a.rel = 'noopener noreferrer';
-    }
-  });
-});
-</script>
-
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-  const VISITED_KEY = 'clickedLinks';
-
-  // --- 1) load previously-clicked URLs from localStorage --------------
-  const saved = JSON.parse(localStorage.getItem(VISITED_KEY) || '[]');
-  saved.forEach(href => {
-    const a = document.querySelector(`a[href='${href}']`);
-    if (a) a.classList.add('clicked');
-  });
-
-  // --- 2) mark new clicks & persist them ------------------------------
-  document.body.addEventListener('click', e => {
-    const a = e.target.closest('a[href]');
-    if (!a) return;                       // not a link
-    a.classList.add('clicked');           // visual cue now
-    if (!saved.includes(a.href)) {        // store for next visit
-      saved.push(a.href);
-      localStorage.setItem(VISITED_KEY, JSON.stringify(saved));
-    }
-  });
-});
-</script>
 
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-S4Q4C5BZ6D"></script>
@@ -55,132 +24,339 @@ document.addEventListener('DOMContentLoaded', () => {
 </script>
 
 <body>
-<body style="background-color:#F8F8FF;">
-<header class="profile-header">
-    <img class="profile" src="https://jaredchai.github.io/assets/images/profile.JPG" alt="Portrait of Jared Chai, business suit and glasses">
-    <div class="bio">
-	    <h1>Jared Chai</h1>
-	    <h4>EY – Parthenon<br>
-	    Quantitative Finance &amp; Economics</h4>
-	    <address>
-	        One Manhattan West,<br>
-            395 9th Ave,<br>
-	        New York, NY 10001<br>
-	        Email: chtianyi&nbsp;at&nbsp;umich&nbsp;dot&nbsp;edu
-	    </address>
-	    <links> <br><a href="https://www.linkedin.com/in/tianyi-jared-chai/">LinkedIn</a>  
-	    	&middot <a href="https://github.com/jaredchai">GitHub</a>  
-	        &middot <a href="https://scholar.google.com/citations?user=Mg5M5jEAAAAJ&hl=en&oi=ao">Google Scholar</a>
-	        &middot <a href="https://orcid.org/0000-0002-7806-0594">ORCID</a>  
-	        &middot <a href="https://www.researchgate.net/profile/Jared-Chai-2">ResearchGate</a>
-            &middot <a href="cn.html">中文主页</a>
-	    </links>
+<!-- NAVBAR-->
+<nav>
+    <div class="left">
+        <a href="#main">Jared Chai</a>
     </div>
-</header>
+    <div class="right">
+        <a href="https://github.com/jaredchai" target="_blank" rel="noopener
+        noreferrer">
+            <i class="fa-brands fa-github"></i>
+            <span>GitHub</span>
+        </a>
 
-<hr>
+        <a href="https://www.linkedin.com/in/tianyi-jared-chai/" target="_blank" rel="noopener
+        noreferrer">
+            <i class="fa-brands fa-linkedin"></i>
+            <span>LinkedIn</span>
+        </a>
+
+        <a href="https://scholar.google.com/citations?user=Mg5M5jEAAAAJ&hl=en&oi=ao" target="_blank" rel="noopener
+        noreferrer">
+            <i class="fa-brands fa-google-scholar"></i>
+            <span>Google Scholar</span>
+        </a>
+
+        <a href="https://orcid.org/0000-0002-7806-0594" target="_blank" rel="noopener
+        noreferrer">
+            <i class="fa-brands fa-orcid"></i>
+            <span>ORCID</span>
+        </a>
+
+        <a href="https://www.researchgate.net/profile/Jared-Chai-2" target="_blank" rel="noopener
+        noreferrer">
+            <i class="fa-brands fa-researchgate"></i>
+            <span>ResearchGate</span>
+        </a>
+
+        <a class="chineselink" href="cn.html">
+            <img class="ChineseIcon"src="/assets/images/favicon.ico" width="16" height="16" alt="Chinese icon" style="position: relative; top: 2px">
+            <span>中文主页</span>
+        </a>
+    </div>
+</nav>
 
 <main>
+    <!-- SECTION 1: main -->
+    <section class="main-section" id="main">
+        <div class = "headshot">
+            <img src="assets/images/profile.webp" alt="Jared Chai headshot">
+        </div>
 
-<section id="about">
-    <h2>About Me</h2>
-	<p>I am a member of the Quantitative Finance &amp; Economics <i>(QFE, f/k/a Complex Securities)</i> team at <a href="https://www.ey.com/en_us/services/strategy/parthenon">Ernst & Young – Parthenon</a>, New York.</p>
-	<p>I obtained dual-Master's from the <a href="https://gatech.edu">Georgia Institute of Technology</a> in 2023, dual-Bachelor's from <a href="https://umich.edu">University of Michigan, Ann Arbor</a> in 2021.</p>
-	<p><a href="https://www.sac.on.ca/">St. Andrew's College</a> <i>(Aurora, ON, Canada) </i> Class of 2016. ––– <i>Dileas gu brath / faithful forever</i></p>
-</section>
+        <div class = "text">
+            <h2>Hi, I'm Jared.</h2>
+            <p>I am currently a member of the <b>Quantitative Finance &amp; Economics</b> <i>(QFE, f/k/a Complex Securities)</i> team at <a href="https://www.ey.com/en_us/services/strategy/parthenon" target="_blank" rel="noopener
+        noreferrer">Ernst &amp; Young – Parthenon</a>, New York.</p>
+	        <p>I obtained <b>dual-Master's</b> from the <a href="https://gatech.edu" target="_blank" rel="noopener
+        noreferrer">Georgia Institute of Technology</a> in 2023 and <b>dual-Bachelor's</b> from <a href="https://umich.edu" target="_blank" rel="noopener
+        noreferrer">University of Michigan, Ann Arbor</a> in 2021.</p>
+            <p>Class of 2016, <a href="https://www.sac.on.ca/" target="_blank" rel="noopener
+        noreferrer">St. Andrew's College</a> (Canada).</p>
+        <p>––– <i>Dileas gu brath / faithful forever</i></p>
+            <div class="email"><p><b>Email:</b> chtianyi at umich dot edu</p></div>
+            <div class="links">
+                <a href="#education">
+                    <i class="fa-solid fa-user-graduate"></i>
+                    <span> Education </span>
+                </a>
 
-<section id="Education">
-    <h2>Education</h2>
-    <h4><u>Georgia Institute of Technology </u></h4>
-    <p><i>Sept. 2021 to May 2023 – Atlanta, Georgia, USA – GPA: 4.0</i></p>
-    <ul class="fancy">
-        <li>M.S., <a href="https://qcf.gatech.edu/">Quantitative &amp; Computational Finance</a></li>
-        <li>M.S., <a href="https://cse.gatech.edu/ms-computational-science-and-engineering">Computational Science &amp; Engineering</a></li>
-    </ul>
-    <h4><u>University of Michigan, Ann Arbor </u></h4>
-    <p><i>Sept. 2016 to May 2021 – Ann Arbor, Michigan, USA – GPA: 3.93</i></p>
-    <ul class="fancy">
-        <li>B.S.E. (<i><b>Summa Cum Laude</b></i>), <a href="https://ioe.engin.umich.edu/">Industrial &amp; Operations Engineering </a>(Operations Research), College of Engineering</li>
-        <li>B.B.A. (<i><b>High Distinction</b></i>), Business Administration &amp; Management (Finance), <a href="https://michiganross.umich.edu/undergraduate/bba">Stephen M. Ross School of Business</a></li>
-        <li>Minor in <a href="https://cse.engin.umich.edu/">Computer Science</a></li>
-    </ul>
-</section>
+                <a href="#publication">
+                    <i class="fa-solid fa-newspaper"></i>
+                    <span> Publication </span>
+                </a>
 
-<section id="publications">
-    <h2>Publications &amp; Selected Public Projects</h2>
-    <ul class="fancy">
-        <li><b>Chai JT</b>, Bobrovnikov M, Dinov ID (2022). <i><a href="https://iase-web.org/documents/papers/sat2021/IASE2021%20Satellite%20132_DINOV.pdf">Probability Distributome – Computing, Visualization, and Instruction</a></i>. Proceedings, IASE 2021 <i><a href="https://iase-web.org/Conference_Proceedings.php?p=2021_Statistics_Education_in_the_Era_of_Data_Science">Statistics Education in the Era of Data Science</a></i>. <i><a href="https://iase-web.org/Conference_Proceedings.php?p=2021_Statistics_Education_in_the_Era_of_Data_Science">DOI: 10.52041/iase.pdsxt</a></i>.</li>
-        <li>Bobrovnikov M, <b>Chai JT</b>, Dinov ID (2022). <i><a href="https://link.springer.com/article/10.1007/s42979-022-01206-w"> Interactive Visualization and Computation of 2D and 3D Probability Distributions</a></i>. <i><a href="https://link.springer.com/journal/42979">SN Computer Science</a></i> 3: 327. <i><a href="https://link.springer.com/article/10.1007/s42979-022-01206-w">DOI: 10.1007/s42979-022-01206-w</a></i>.</li>
-        <li><a href="https://rcompute.nursing.umich.edu/SOCR_Probability_Distribution_Calculator_and_Modeler/">SOCR Probability Distribution Calculator/Modeler</a> [<a href="https://github.com/SOCR/ProbDistCalc_RShiny">GitHub repo</a>]</li>
-        <li><a href="https://socr.umich.edu/DSPA2/DSPA2_notes/DSPA_Appendix_5_SQL_DB_Queries.html">DSPA2 Appendix 5: Database SQL Queries</a></li>
-    </ul>
-</section>
+                <a href="#research">
+                    <i class="fa-solid fa-calculator"></i>
+                    <span> Research </span>
+                </a>
 
-<section id="research">
-    <h2>Research Experience</h2>
-    <ul class="fancy">
-        <li><strong>Research Project Lead</strong>, <a href="https://www.socr.umich.edu/index.html">Statistics Online Computational Resource (SOCR)</a>, University of Michigan — Sep 2019 to Aug 2021 (Supervisor: <a href="https://scholar.google.com/citations?user=DYIQNOcAAAAJ&hl=en">Dr. Ivo D. Dinov</a>)</li>
-        <li><strong>Research Assistant</strong>, <a href="https://mdp.engin.umich.edu/">Multidisciplinary Design Program</a>, University of Michigan — Sep 2019 to Aug 2021</li>
-        <ul class="fancy">
-        	<li><a href="https://mdp.engin.umich.edu/meet_mdp_students/jared-chai/"> Student Highlight: Jared Chai</a></li>
-        </ul>
-        <li><strong>Summer Research Fellow</strong>, <a href="https://michr.umich.edu/">Michigan Institute for Clinical &amp; Health Research</a>, University of Michigan – Jun 2020 to Aug 2020</li>
-        <li><strong>Research Assistant</strong>, Stephen M. Ross School of Business Finance Department, University of Michigan – Feb 2020 to Jun 2020</li>
-    </ul>
-</section>
+                <a href="#teaching">
+                    <i class="fa-solid fa-person-chalkboard"></i>
+                    <span> Teaching </span>
+                </a>
 
-<section id="teaching">
-    <h2>Teaching Experience</h2>
+                <a href="#awards">
+                    <i class="fa-solid fa-award"></i>
+                    <span> Awards &amp; Accomplishments </span>
+                </a>
 
-    <h4><u>Georgia Institute of Technology</u></h4>
-    <ul class="fancy">
-        <li>MATH 6635 – Numerical Methods in Finance (Graduate TA) – Spring 2023</li>
-    </ul>
-    <h4><u>University of Michigan, Ann Arbor</u></h4>
-    <ul class="fancy">
-        <li>FIN 615 – Valuation (TA) – Fall 2020</li>
-        <li>FIN 415 – Corporate Investment Decisions (TA) – Fall 2020</li>
-        <li>FIN 409 – Fixed Income Securities (TA) – Winter 2021</li>
-        <li>FIN 480 – Options &amp; Futures (TA) – Winter 2021</li>
-        <li>FIN 300 – Financial Management (TA) – Winter 2020</li>
-        <li>FIN 302 – Making Financial Decisions (TA) – Fall 2019, Winter 2020, Fall 2020, Winter 2021</li>
-    </ul>
-</section>
+                <a href="#industry">
+                    <i class="fa-solid fa-briefcase"></i>
+                    <span> Industry </span>
+                </a>
 
-<section id="awards">
-    <h2>Awards &amp; Accomplishments</h2>
-    <ul class="fancy">
-        <li>James B. Angell Scholar, University of Michigan(2018, 2021)</li>
-        <li>H.R. &amp; D.I. Rasch Scholarship, Industrial &amp; Operations Engineering, University of Michigan (2018)</li>
-        <li>University Honors, all semesters at University of Michigan</li>
-        <li>College of Engineering Dean’s List, all semesters at University of Michigan</li>
-        <li>Chartered Financial Analyst (CFA) Exam Level 1 passed (May 2024, top 10%, 46% pass rate)</li>
-        <li>Chartered Financial Analyst (CFA) Exam Level 2 passed (November 2024, top 10%, 39% pass rate)</li>
-    </ul>
-</section>
+                <a href="#personal">
+                    <i class="fa-solid fa-cat"></i>
+                    <span> Cat </span>
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- SECTION 2: education -->
+    <section id="education" class="education-section">
+        <div class="text">
+            <h2>Education</h2>
+            <div class="GaTech">
+                <h3>Georgia Institute of Technology</h3>
+                <p>Sept. 2021 to May 2023</p>
+                <p><i>Atlanta, GA.</i></p>
+                <p><b>GPA</b>: 4.0 </p>
+                <ul>
+                    <li><p>Master of Science</p></li>
+                    <ul>
+                        <li><p><a href="https://qcf.gatech.edu/" target="_blank" rel="noopener
+        noreferrer">Quantitative &amp; Computational Finance</a></p></li>
+                    </ul>
+                    <li><p>Master of Science</p></li>
+                    <ul>
+                        <li><p><a href="https://cse.gatech.edu/ms-computational-science-and-engineering" target="_blank" rel="noopener
+        noreferrer">Computational Science &amp; Engineering</a></p></li>
+                    </ul>
+                </ul>
+            </div>
+            <div class="Michigan">
+                <h3>University of Michigan</h3>
+                <p>Sept. 2016 to May 2021</p>
+                <p><i>Ann Arbor, MI.</i></p>
+                <p><b>GPA</b>: 3.93 </p>
+                <ul>
+                    <li><p>Bachelor of Science in Engineering, <i><b>Summa Cum Laude</b></i> – College of Engineering</p></li>
+                    <ul>
+                        <li><p><a href="https://ioe.engin.umich.edu/" target="_blank" rel="noopener
+        noreferrer">Industrial &amp; Operations Engineering</a> (Operations Research)</p></li>
+                    </ul>
+                    <li><p>Bachelor of Business Administration, <i><b>High Distinction</b></i> – Stephen M. Ross School of Business</p></li>
+                    <ul>
+                        <li><p><a href="https://michiganross.umich.edu/undergraduate/bba" target="_blank" rel="noopener
+        noreferrer">Business Administration &amp; Management</a> (Finance)</p></li>
+                    </ul>
+                    <li><p>Minor, <a href="https://cse.engin.umich.edu/" target="_blank" rel="noopener
+        noreferrer">Computer Science</a></p></li>
+                </ul>
+            </div>
+        </div>
+    </section>
 
-<section id="industry">
-    <h2>Industry Experience</h2>
-    <ul class="fancy">
-        <li><strong>Associate</strong>, Ernst &amp; Young - Parthenon / <i>Quantitative Finance &amp; Economics</i> — Sep 2023 to Present – New York, NY</li>
-        <li><strong>Summer Analyst</strong>, MayTech Global Investments — Jul 2023 to Sep 2023 – New York, NY</li>
-        <li><strong>Summer Analyst</strong>, Dimensional Fund Advisors / <i>Investment Solutions Group / Thought Leadership Team</i> — Jun 2022 to Aug 2022 – Austin, TX</li>
-        <li><strong>Summer Analyst</strong>, Ernst &amp; Young / <i>Financial Services Office / Technology Advisory</i> — Jun 2019 to Aug 2019 – New York, NY</li>
-        <li><strong>Project Management Intern</strong>, Cummins Inc. / <i>Global Logistics Improvement Group (GLIG)</i> — May 2018 to Aug 2018 – Memphis, TN</li>
-    </ul>
-</section>
+    <!-- SECTION 3: publication -->
+     <section id="publication" class="publication-section">
+        <div class="text">
+            <h2>Publications &amp; Selected Public Projects</h2>
+            <ul class = "pubs">
+                <li><p><b>Chai JT</b>, Bobrovnikov M, Dinov ID (2022). <i><a href="https://iase-web.org/documents/papers/sat2021/IASE2021%20Satellite%20132_DINOV.pdf" target="_blank" rel="noopener
+        noreferrer">Probability Distributome – Computing, Visualization, and Instruction</a></i>. Proceedings, IASE 2021 <i><a href="https://iase-web.org/Conference_Proceedings.php?p=2021_Statistics_Education_in_the_Era_of_Data_Science" target="_blank" rel="noopener
+        noreferrer">Statistics Education in the Era of Data Science</a></i>. <i><a href="https://iase-web.org/Conference_Proceedings.php?p=2021_Statistics_Education_in_the_Era_of_Data_Science" target="_blank" rel="noopener
+        noreferrer">DOI: 10.52041/iase.pdsxt</a></i>.</p></li>
+                <li><p>Bobrovnikov M, <b>Chai JT</b>, Dinov ID (2022). <i><a href="https://link.springer.com/article/10.1007/s42979-022-01206-w" target="_blank" rel="noopener
+        noreferrer"> Interactive Visualization and Computation of 2D and 3D Probability Distributions</a></i>. <i><a href="https://link.springer.com/journal/42979" target="_blank" rel="noopener
+        noreferrer">SN Computer Science</a></i> 3: 327. <i><a href="https://link.springer.com/article/10.1007/s42979-022-01206-w" target="_blank" rel="noopener
+        noreferrer">DOI: 10.1007/s42979-022-01206-w</a></i>.</p></li>
+                <li><p><a href="https://rcompute.nursing.umich.edu/SOCR_Probability_Distribution_Calculator_and_Modeler/" target="_blank" rel="noopener
+        noreferrer">SOCR Probability Distribution Calculator/Modeler</a></p></li>
+                    <ul>
+                        <li><p>GitHub Repository: <a href="https://github.com/SOCR/ProbDistCalc_RShiny" target="_blank" rel="noopener
+        noreferrer">here</a></p></li>
+                    </ul>
+                <li><p><a href="https://socr.umich.edu/DSPA2/DSPA2_notes/DSPA_Appendix_5_SQL_DB_Queries.html" target="_blank" rel="noopener
+        noreferrer">DSPA2 Appendix 5: Database SQL Queries</a></p></li>
+            </ul>
+        </div>
+    </section>
 
-<section id="misc">
-    <h2>Cat</h2>
-    <p>Thank you for visiting — here’s my cat Sydney:</p>
-    <img class="cat" src="https://jaredchai.github.io/assets/images/cat.JPG" alt="Jared’s cat sitting regally.">
-</section>
+    <!-- SECTION 4: research -->
+     <section id="research" class="research-section">
+        <div class="text">
+            <h2>Research</h2>
+            <ul class = "researches">
+                <li><p><b>Research Project Lead</b>, <a href="https://www.socr.umich.edu/index.html" target="_blank" rel="noopener
+        noreferrer">Statistics Online Computational Resource (SOCR)</a>, University of Michigan</p></li>
+                <ul>
+                    <li><p>Sept. 2019 to Aug. 2021</p></li>
+                    <li><p>Supervisor: <a href="https://scholar.google.com/citations?user=DYIQNOcAAAAJ&hl=en" target="_blank" rel="noopener
+        noreferrer">Dr. Ivo D. Dinov</a></p></li>
+                </ul>
+                <li><p><b>Research Assistant</b>, <a href="https://mdp.engin.umich.edu/" target="_blank" rel="noopener
+        noreferrer">Multidisciplinary Design Program</a>, University of Michigan</p></li>
+                <ul>
+                    <li><p>Sept. 2019 to Aug. 2021</p></li>
+                    <li><p>Student Highlight:<a href="https://mdp.engin.umich.edu/meet_mdp_students/jared-chai/" target="_blank" rel="noopener
+        noreferrer"> Jared Chai</a></p></li>
+                </ul>
+                <li><p><b>Summer Research Fellow</b>, <a href="https://michr.umich.edu/" target="_blank" rel="noopener
+        noreferrer">Michigan Institute for Clinical &amp; Health Research</a>, University of Michigan</p></li>
+                <ul>
+                    <li><p>Jun. 2020 to Aug. 2020</p></li>
+                </ul>
+                <li><p><b>Research Assistant</b>, Stephen M. Ross School of Business Finance Department, University of Michigan</p></li>
+                <ul>
+                    <li><p>Feb. 2020 to Jun. 2020</p></li>
+                </ul>
+            </ul>
+        </div>
+    </section>
+
+    <!-- SECTION 5: teaching -->
+     <section id="teaching" class="teaching-section">
+        <div class="text">
+            <h2>Teaching</h2>
+            <div class="GaTech">
+                <h3>Georgia Institute of Technology</h3>
+                <ul>
+                    <li><p>MATH 6635 – Numerical Methods in Finance (Graduate TA)</p></li>
+                    <ul>
+                        <li><p>Spring 2023</p></li>
+                    </ul>
+                </ul>
+            </div>
+            <div class="Michigan">
+                <h3>University of Michigan</h3>
+                <ul>
+                    <li><p>FIN 409 – Fixed Income Securities (TA)</p></li>
+                    <ul>
+                        <li><p>Winter 2021</p></li>
+                    </ul>
+                    <li><p>FIN 480 – Options &amp; Futures (TA)</p></li>
+                    <ul>
+                        <li><p>Winter 2021</p></li>
+                    </ul>
+                    <li><p>FIN 615 – Valuation (TA)</p></li>
+                    <ul>
+                        <li><p>Fall 2020</p></li>
+                    </ul>
+                    <li><p>FIN 415 – Corporate Investment Decisions (TA)</p></li>
+                    <ul>
+                        <li><p>Fall 2020</p></li>
+                    </ul>
+                    <li><p>FIN 300 – Financial Management (TA)</p></li>
+                    <ul>
+                        <li><p>Winter 2020</p></li>
+                    </ul>
+                    <li><p>FIN 302 – Making Financial Decisions (TA)</p></li>
+                    <ul>
+                        <li><p>Fall 2019, Winter 2020, Fall 2020, Winter 2021</p></li>
+                    </ul>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 6: awards -->
+     <section id="awards" class="awards-section">
+        <div class="text">
+            <h2>Awards &amp; Accomplishments</h2>
+            <ul class = "awards">
+                <li><p><b>James B. Angell Scholar</b> (2018, 2021)</p></li>
+                <ul>
+                    <li>
+                        <p>University of Michigan</p>
+                    </li>
+                </ul>
+                <li><p><b>H.R. &amp; D.I. Rasch Scholarship</b> (2018)</p></li>
+                <ul>
+                    <li>
+                        <p>Industrial &amp; Operations Engineering, University of Michigan</p>
+                    </li>
+                </ul>
+                <li><p><b>University Honors</b> (all semesters)</p></li>
+                <ul>
+                    <li>
+                        <p>University of Michigan</p>
+                    </li>
+                </ul>
+                <li><p><b>Dean's List</b> (all semesters)</p></li>
+                <ul>
+                    <li>
+                        <p>College of Engineering, University of Michigan</p>
+                    </li>
+                </ul>
+                <li><p><b>Chartered Financial Analyst (CFA) Level 1 </b> Exam passed</p></li>
+                <ul>
+                    <li>
+                        <p>May 2024, top 10%, 46% pass rate</p></li>
+                    </li>
+                </ul> 
+                <li><p><b>Chartered Financial Analyst (CFA) Level 2 </b> Exam passed</p></li>
+                <ul>
+                    <li>
+                        <p>November 2024, top 10%, 39% pass rate</p></li>
+                    </li>
+                </ul> 
+            </ul>
+        </div>
+    </section>
+
+    <!-- SECTION 7: industry -->
+     <section id="industry" class="industry-section">
+        <div class="text">
+            <h2>Industry Experience</h2>
+            <ul class = "companies">
+                <li><p><b>Associate</b>, Ernst &amp; Young - Parthenon, <i>Quantitative Finance &amp; Economics</i></p></li>
+                <ul>
+                    <li><p>Sept. 2023 to Present – New York, NY</p></li>
+                </ul>
+                <li><p><b>Summer Analyst</b>, <a href="http://www.maytechglobal.com/" target="_blank" rel="noopener noreferrer">MayTech Global Investments</a></p></li>
+                <ul>
+                    <li><p>Jul. 2023 to Sept. 2023 – New York, NY</p></li>
+                </ul>
+                <li><p><b>Summer Analyst</b>, <a href="https://www.dimensional.com/" target="_blank" rel="noopener noreferrer">Dimensional Fund Advisors</a>, <i>Investment Solutions Group, Thought Leadership Team</i></a></p></li>
+                <ul>
+                    <li><p>Jun. 2022 to Aug. 2022 – Austin, TX</p></li>
+                </ul>
+                <li><p><b>Summer Analyst</b>, Ernst &amp; Young, <i>Financial Services Office, Technology Advisory</i></a></p></li>
+                <ul>
+                    <li><p>Jun. 2019 to Aug. 2019 – New York, NY</p></li>
+                </ul>
+                <li><p><b>Project Management Intern</b>, <a href="https://www.cummins.com/" target="_blank" rel="noopener noreferrer">Cummins Inc.</a>, <i>Global Logistics Improvement Group (GLIG)</i></p></li>
+                <ul>
+                    <li><p>May 2018 to Aug. 2018 – Memphis, TN</p></li>
+                </ul>
+            </ul>
+        </div>
+    </section>
+
+    <!-- SECTION 8: personal -->
+     <section id="personal" class="personal-section">
+        <div class="text">
+            <div class="cat">
+                <p>Thank you for visiting — here's my cat <i>Sydney</i>:</p>
+                <img class="cat" src="assets/images/cat.JPG" alt="Jared's cat Sydney.">
+            </div>
+        </div>
+    </section>
 
 </main>
-
-<footer class="text-center muted">
-    &copy; 2025 Jared Chai. Last updated June 7, 2025.
-</footer>
+    <footer class="footer">
+        <p>&copy; 2025 Jared Chai. Last updated June 8, 2025.</p>
+    </footer>
 </body>
-
 </html>
