@@ -300,6 +300,7 @@ nav .right a{
 
 @media (max-width: 1000px){
     /* NAVABR */
+    
     nav .right a{
         font-size: 22px;
     }
@@ -387,6 +388,7 @@ nav .right a{
 
     nav .right a{
         font-size: 22px;
+        margin: 0 2px;
     }
 
     nav .right a span{
